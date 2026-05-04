@@ -6,7 +6,7 @@ import { GifState } from "../context/gif-context";
 const Header = () => {
   const [categories, setCategories] = useState([]);
   const [showCategories, setShowCategories] = useState(false);
-  const { giphy, filteredGifs, setFilteredGifs, favorites } = GifState();
+  const { giphy, filter, setFilter, favorites } = GifState();
 
   const fetchGifCategories = async () => {
     try {
@@ -50,7 +50,7 @@ const Header = () => {
             />
           </button>
 
-        {  filteredGifs.length > 0 && (
+        {  filter.length > 0 && (
           <div className="h-9 bg-gray-700 pt-1.5 px-6 cursor-pointer rounded">
             <Link to="/favorites">Favorites GIFs</Link>
           </div>
